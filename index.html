@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel Banner</title>
+    <link rel="stylesheet/less" href="./css/index.less">
+    <script src="./js/less-2.5.3.min.js"></script>
+    <script>
+        ~function () {
+            let computedSize = function () {
+                let _d = 640, _w = document.documentElement.clientWidth;
+                if (_w > _d) {
+                    document.documentElement.style.fontSize = '100px';
+                    return;
+                }
+                document.documentElement.style.fontSize = (_w / _d) * 100 + 'px';
+            }
+            computedSize();
+            window.addEventListener('resize', computedSize);
+        }();
+    </script>
+</head>
+
+<body>
+    <section id="carouselContainer" class="carouselContainer">
+        <ul class="wrapper bannerBox">
+        </ul>
+        <ul class="focusBox">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <a href="javascript:;" class="arrow arrowleft"></a>
+        <a href="javascript:;" class="arrow arrowRight"></a>
+    </section>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./js/bannerClass.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
