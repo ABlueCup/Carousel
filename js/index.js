@@ -126,8 +126,22 @@ let carouselRender = (function () {
         }
     }
 })();
-carouselRender.init();
+// carouselRender.init();
 
 
+let $container = $(".carouselContainer"),
+$co = $(".carousel")
+;
+$.ajax('./json/banner.json', {
+    method: 'GET',
+    dataType: 'json',
+    success: function (result) {
+        $container.carouselBanner(result,1000,3000);
+        $co.carouselBanner(result, 500, 2000);
+    },
+    error:function(msg){
+        console.log(msg);
+    }
+});
 
 

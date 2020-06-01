@@ -1,12 +1,11 @@
 @import "reset";
 
-.carouselContainer {
+.carouselContainer, .carousel {
     position: relative;
     width   : 1000px;
     height  : 300px;
     margin  : 0 auto;
     overflow: hidden;
-
     .wrapper {
         list-style: none;
     }
@@ -41,6 +40,9 @@
             border-radius: 50%;
             &:hover{
                 background: salmon;
+            }
+            &.current{
+                background: cadetblue;
             }
         }
     }
