@@ -69,7 +69,7 @@
             var distance = -index * containerWidth + 'px';
             $bannerContainer.stop().animate({ 'left': distance }, speed, function () {
                 changeLi(index);
-                if (index >= 4) {
+                if (index >= images.length) {
                     index = 0;
                     $bannerContainer.stop().animate({ 'left': 0 }, 0);
                     changeLi(index);
@@ -92,7 +92,7 @@
             step--;
             if (step < 0) {
                 $bannerContainer.stop().animate({ 'left': -images.length*containerWidth+'px' }, 0);
-                step = 4;
+                step = images.length;
                 step--;
             }
             changeBanner(step);
@@ -104,7 +104,7 @@
             autoTimer = setInterval(function () {
                 step++;
                 changeBanner(step);
-                if (step >= 4) {
+                if (step >= images.length) {
                     step = 0;
                 }
             }, duration);
